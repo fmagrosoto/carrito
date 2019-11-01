@@ -1,0 +1,21 @@
+Options -Indexes
+DirectoryIndex index.php
+
+# RewriteCond %{HTTPS} !=on
+# RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [R,L]
+
+<IfModule mod_headers.c>
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires 0
+</IfModule>
+
+RewriteEngine On
+
+RewriteRule ^(tmp)\/|\.ini$ - [R=404]
+
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* index.php [L,QSA]
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]

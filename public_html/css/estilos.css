@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:300,400,700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #003c78;
+  font-family: 'Dosis', sans-serif;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+/* GENERALES */
+a {
+  color: blue;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.contenedor {
+  width: 992px;
+  margin: auto;
+}
+
+.flex-centrado {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.contendor.flex-centrado > * {
+  flex: 0 0 auto;
+}
+
+hr {
+  background: linear-gradient(90deg, transparent, lightgray, transparent);
+  border: 0;
+  height: 1px;
+  margin: 1rem 0;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(rgb(235,240,235), rgb(200,205,200));
+  border-bottom: 1px solid rgb(180,185,180);
+  height: 70px;
+  width: 100vw;
+}
+
+header nav {
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  height: 100%;
+  justify-content: space-between;
+  margin: auto;
+  width: 992px;
+}
+
+header nav > a {
+  display: block;
+  color: #003c78;
+  font-size: 32px;
+  font-weight: 700;
+  flex: 1;
+  text-decoration: none;
+  text-shadow: 2px 2px .10rem rgba(51,51,151,.25);
+}
+
+header nav > a:hover {
+  color: #315477;
+}
+
+header nav > ul {
+  display: flex;
+  flex: 1;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+header nav > ul > li {
+  flex: 0 0 auto;
+  margin-right: 1rem;
+}
+
+header nav > ul > li:last-child {
+  margin-right: 0;
+}
+
+header nav > ul > li a {
+  color: #003c78;
+  font-size: 20px;
+  text-decoration: none;
+  text-shadow: 2px 2px .10rem rgba(51,51,151,.25);
+}
+
+header nav > ul > li a:hover {
+  color: #315477;
+  text-decoration: underline;
+}
+
+/* MAIN */
+main {
+  background: white;
+  padding: 4rem 0;
+  width: 100vw;
+}
+
+/* FOOTER */
+footer {
+  color: whitesmoke;
+  font-size: 16px;
+  padding: 2rem 0;
+}
+
+footer .legales {
+  width: 50%;
+}
+
+footer .legales > h3 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+footer .legales > p {
+  margin: 0;
+  text-align: center;
+}
+
+footer .legales > p a {
+  color: white;
+  text-decoration: underline;
+}
+
+footer .legales > p a:hover {
+  color: yellowgreen;
+}

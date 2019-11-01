@@ -41,19 +41,19 @@ Puedes correr tu ambiente de prubas usando el servidor web de PHP:
 
 ```php -S localhost:8000 -t /public_html```
 
-O si lo prefieres, instala y correo tu ambiente de pruebas con [XAMP](https://www.apachefriends.org/es/index.html).
+O si lo prefieres, instala y corre tu ambiente de pruebas con [XAMP](https://www.apachefriends.org/es/index.html).
 
 ## Contribuir
 
-Si quieres contribuir a este proyecto, sigue las siguientes instrucciones:
+Si quieres contribuir a este proyecto, sigue estas instrucciones:
 
-1. Haz un forkj a este repositorio.
+1. Haz un fork a este repositorio.
 2. Crea una rama: `git checkout -b <branch_name>`.
 3. Haz tus cambios y confírmalos: `git commit -m '<commit_message>'`
-4. Haz  un push a la rama origina: `git push origin carrito/<location>`
-5. Crea un pull reequest.
+4. Haz  un push a la rama original: `git push origin carrito/<location>`
+5. Crea un pull request.
 
-Alternativamente, revisa la documentación de GitHub [Crear Pull Request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
+Alternativamente, revisa la documentación de GitHub para [Crear Pull Request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
 ## Contacto
 
