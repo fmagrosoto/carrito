@@ -50,6 +50,17 @@ hr {
   margin-top: 1rem;
 }
 
+.cantidad {
+  font-size: 12px;
+  background: rgb(200,0,0);
+  display: inline-block;
+  width: 2em;
+  text-align: center;
+  color: white;
+  padding: .5em;
+  border-radius: 50%;
+}
+
 /* HEADER */
 header {
   background: linear-gradient(rgb(235,240,235), rgb(200,205,200));
@@ -225,6 +236,69 @@ main .flex-productos .producto-item > form .form-flex > button[type=submit] {
 main .flex-productos .producto-item > form .form-flex > button[type=submit]:hover {
   background: rgb(220,0,0);
   color: white;
+}
+
+table.carrito {
+  width: 100%;
+}
+
+table.carrito thead tr {
+  background: rgb(71,71,71);
+  color: white;
+}
+
+table.carrito thead tr th:nth-child(1) {
+  width: 50%;
+}
+
+table.carrito tbody tr {
+  background: rgba(200,205,200,.25);
+}
+
+table.carrito tbody tr td {
+  padding: .25rem .5rem;
+}
+
+table.carrito tbody tr td:nth-child(3),
+table.carrito tbody tr td:nth-child(4) {
+  text-align: right;
+}
+
+table.carrito tbody tr td:nth-child(5) {
+  text-align: center;
+}
+
+table.carrito tbody tr td input[type=number] {
+  width: 2.5rem;
+}
+
+table.carrito tbody tr td button[type=submit] {
+  padding: .20rem;
+}
+
+table.carrito tbody tr td a.eliminar {
+  background: rgb(200,0,0);
+  color: whitesmoke;
+  display: inline-block;
+  text-align: center;
+  width: 1em;
+  border-radius: 25%;
+  height: 1em;
+  line-height: .9em;
+}
+
+table.carrito tbody tr td a.eliminar:hover {
+  text-decoration: none;
+  background: rgb(245,10,10);
+}
+
+table.carrito tfoot tr th {
+  text-align: right;
+  padding: .25rem .5rem;
+}
+
+table.carrito tfoot tr:first-child {
+  height: .5rem;
 }
 
 

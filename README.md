@@ -13,6 +13,9 @@ sencillo de carrito de la compra, hecho con variables de sesión de **PHP**.
 Incluye una tabla ficticia de productos y una tabla del carrito, con
 opción para modificar la cantidad del producto y eliminarlo del carrito.
 
+También, para darle un poco de vista y de interacción, he usado **CSS** y **Javascript**.
+Vale la pena revisar esos archivos.
+
 ## Prerequisitos
 
 Antes de empezar a trabajar con este repositorio, ten en cuenta que

@@ -15,9 +15,30 @@ class Portada {
   static function inicio() {
     $f3 = \Base::instance();
 
+    $f3->mset([
+      'interna' => '/_catalogo.html'
+    ]);
+
     // Sale una página 🍕!!
     echo Template::instance()->render('/principal.html');
   }
+
+
+  /**
+   * MOSTRAR EL CARRITO DE LA COMPRA
+   * @uses /carrito
+   */
+  static function carrito() {
+    $f3 = \Base::instance();
+
+    $f3->mset([
+      'interna' => '/_carrito.html'
+    ]);
+
+    // Sale una página 🍕!!
+    echo Template::instance()->render('/principal.html');
+  }
+
 
 
   /**
