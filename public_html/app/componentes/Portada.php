@@ -16,7 +16,9 @@ class Portada {
     $f3 = \Base::instance();
 
     $f3->mset([
-      'interna' => '/_catalogo.html'
+      'interna' => '/_catalogo.html',
+      'catalogo' => Catalogo::simBD(),
+      'msgAlerta' => self::proAlerta()
     ]);
 
     // Sale una página 🍕!!
@@ -48,14 +50,57 @@ class Portada {
   static function contenido() {
     $f3 = \Base::instance();
 
-    $f3->set('SESSION.cesta', [
-      ['id' => '85373949', 'nombre' => 'Producto UNO', 'precio' => 35.60, 'cantidad' => 1],
-      ['id' => 'dfdfer44', 'nombre' => 'Producto DOS', 'precio' => 75.20, 'cantidad' => 3],
-      ['id' => '56fdfg324', 'nombre' => 'Producto TRES', 'precio' => 25.10, 'cantidad' => 1]
-    ]);
-
     $cesta = $f3->get('SESSION.cesta');
     print_r($cesta);
+  }
+
+
+  /**
+   * AGREGAR PRODUCTO AL CARRITO
+   */
+  static function agregar() {
+    $f3 = \Base::instance();
+
+    $f3->set('SESSION.msgAlerta', 'El producto ha sido agregado.');
+    $f3->reroute('/');
+  }
+
+
+  /**
+   * ELIMINAR PRODUCTO DEL CARRITO
+   */
+  static function eliminar() {
+    $f3 = \Base::instance();
+    $producto = $f3->get('GET.p');
+
+    $f3->set('SESSION.msgAlerta', 'El producto ha sido eliminado.');
+    $f3->reroute('/');
+  }
+
+
+
+  /**
+   * PROCESAR ALERTA
+   */
+  static function proAlerta() {
+    $f3 = \Base::instance();
+    $salida = false;
+    if ($f3->get('SESSION.msgAlerta')) {
+      $salida = $f3->get('SESSION.msgAlerta');
+      $f3->clear('SESSION.msgAlerta');
+    }
+    return $salida;
+  }
+
+
+  /**
+   * LIMPIAR BD
+   */
+  static function limpiar() {
+    $f3 = \Base::instance();
+    $f3->clear('SESSION');
+    $f3->set('SESSION.msgAlerta', 'La cesta ha sido limpiada.');
+    $f3->reroute('/');
   }
 
 }

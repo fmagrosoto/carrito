@@ -195,7 +195,6 @@ main .flex-productos {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  align-content: flex-start;
   width: 100%;
   margin: -.5rem;
 }

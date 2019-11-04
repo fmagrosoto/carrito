@@ -4,162 +4,48 @@
     <p>Lista ficticia de productos.</p>
     <hr>
 
-    <div class="alerta alerta-ok" role="alert">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      <button class="ocultar-alerta">&times;</button>
-    </div>
+    <check if="{{@msgAlerta}}">
+      <div class="alerta alerta-ok" role="alert">
+        {{@msgAlerta}}
+        <button class="ocultar-alerta">&times;</button>
+      </div>
+    </check>
 
     <div class="flex-productos">
-      <div class="producto-item">
-        <div>
-          <img src="https://via.placeholder.com/640x480?text=Foto+producto" alt="">
-          <h3>Título del producto</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Ullam, suscipit totam maiores ut laudantium voluptatem possimus
-            nobis non porro impedit. Tempore molestiae reprehenderit
-            veritatis quo debitis veniam illo, quas omnis!
-          </p>
-        </div>
-        <form>
-          <hr>
-          <div class="form-flex">
-            <p>$ 500.00</p>
-            <input type="number" name="cantidad" value="1" min="1" max="9">
-            <button type="submit">Agregar</button>
-            <input type="hidden" name="id" value="">
-            <input type="hidden" name="producto" value="">
-            <input type="hidden" name="precio" value="">
+      <check if="{{count(@catalogo) > 0}}">
+        <true>
+          <repeat group="{{@catalogo}}" value="{{@item}}">
+            <div class="producto-item">
+              <div>
+                <img src="{{@item.foto}}" alt="">
+                <h3>{{@item.producto}}</h3>
+                <p>
+                  {{@item.descripcion}}
+                </p>
+              </div>
+              <form method="POST" action="/agregar">
+                <hr>
+                <div class="form-flex">
+                  <p>{{'$ ' . number_format(@item.precio,2)}}</p>
+                  <input type="number" name="cantidad" value="1" min="1" max="9">
+                  <input type="hidden" name="id" value="{{@item.id}}">
+                  <input type="hidden" name="producto" value="{{@item.producto}}">
+                  <input type="hidden" name="precio" value="{{@item.precio}}">
+                  <button type="submit">Agregar</button>
+                </div>
+              </form>
+            </div>
+          </repeat>
+        </true>
+        <false>
+          <div class="alerta" style="margin-bottom: 0;">
+            Por el momento, no hay datos.
           </div>
-        </form>
-      </div>
-      <div class="producto-item">
-        <div>
-          <img src="https://via.placeholder.com/640x480?text=Foto+producto" alt="">
-          <h3>Título del producto</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Ullam, suscipit totam maiores ut laudantium voluptatem possimus
-            nobis non porro impedit. Tempore molestiae reprehenderit
-            veritatis quo debitis veniam illo, quas omnis!. Tempore molestiae reprehenderit
-            veritatis quo debitis veniam illo, quas omnis!
-          </p>
-        </div>
-        <form>
-          <hr>
-          <div class="form-flex">
-            <p>$ 500.00</p>
-            <input type="number" name="cantidad" value="1" min="1" max="9">
-            <button type="submit">Agregar</button>
-            <input type="hidden" name="id" value="">
-            <input type="hidden" name="producto" value="">
-            <input type="hidden" name="precio" value="">
-          </div>
-        </form>
-      </div>
-      <div class="producto-item">
-        <div>
-          <img src="https://via.placeholder.com/640x480?text=Foto+producto" alt="">
-          <h3>Título del producto</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Ullam, suscipit totam maiores ut laudantium voluptatem possimus
-            nobis non porro impedit. Tempore molestiae reprehenderit
-            veritatis quo debitis veniam illo, quas omnis!. Tempore molestiae reprehenderit
-            veritatis quo debitis veniam illo, quas omnis!. Tempore molestiae reprehenderit
-            veritatis quo debitis veniam illo, quas omnis!. Tempore molestiae reprehenderit
-            veritatis quo debitis veniam illo, quas omnis!
-          </p>
-        </div>
-        <form>
-          <hr>
-          <div class="form-flex">
-            <p>$ 500.00</p>
-            <input type="number" name="cantidad" value="1" min="1" max="9">
-            <button type="submit">Agregar</button>
-            <input type="hidden" name="id" value="">
-            <input type="hidden" name="producto" value="">
-            <input type="hidden" name="precio" value="">
-          </div>
-        </form>
-      </div>
-
-      <div class="producto-item">
-        <div>
-          <img src="https://via.placeholder.com/640x480?text=Foto+producto" alt="">
-          <h3>Título del producto</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Ullam, suscipit totam maiores ut laudantium voluptatem possimus
-            nobis non porro impedit. Tempore molestiae reprehenderit
-            veritatis quo debitis veniam illo, quas omnis!.
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-          </p>
-        </div>
-        <form>
-          <hr>
-          <div class="form-flex">
-            <p>$ 500.00</p>
-            <input type="number" name="cantidad" value="1" min="1" max="9">
-            <button type="submit">Agregar</button>
-            <input type="hidden" name="id" value="">
-            <input type="hidden" name="producto" value="">
-            <input type="hidden" name="precio" value="">
-          </div>
-        </form>
-      </div>
-      <div class="producto-item">
-        <div>
-          <img src="https://via.placeholder.com/640x480?text=Foto+producto" alt="">
-          <h3>Título del producto</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Ullam, suscipit totam maiores ut laudantium voluptatem possimus
-            nobis non porro impedit. Tempore molestiae reprehenderit
-            veritatis quo debitis veniam illo, quas omnis!. Tempore molestiae reprehenderit
-            veritatis quo debitis veniam illo, quas omnis!
-          </p>
-        </div>
-        <form>
-          <hr>
-          <div class="form-flex">
-            <p>$ 500.00</p>
-            <input type="number" name="cantidad" value="1" min="1" max="9">
-            <button type="submit">Agregar</button>
-            <input type="hidden" name="id" value="">
-            <input type="hidden" name="producto" value="">
-            <input type="hidden" name="precio" value="">
-          </div>
-        </form>
-      </div>
-      <div class="producto-item">
-        <div>
-          <img src="https://via.placeholder.com/640x480?text=Foto+producto" alt="">
-          <h3>Título del producto</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Ullam, suscipit totam maiores ut laudantium voluptatem possimus
-            nobis non porro impedit. Tempore molestiae reprehenderit
-            veritatis quo debitis veniam illo, quas omnis!. Tempore molestiae reprehenderit
-            veritatis quo debitis veniam illo, quas omnis!.
-          </p>
-        </div>
-        <form>
-          <hr>
-          <div class="form-flex">
-            <p>$ 500.00</p>
-            <input type="number" name="cantidad" value="1" min="1" max="9">
-            <button type="submit">Agregar</button>
-            <input type="hidden" name="id" value="">
-            <input type="hidden" name="producto" value="">
-            <input type="hidden" name="precio" value="">
-          </div>
-        </form>
-      </div>
+        </false>
+      </check>
     </div>
 
     <hr>
-    <p>Total de productos: <strong>6</strong></p>
+    <p>Total de productos: <strong>{{count(@catalogo)}}</strong></p>
   </div>
 </main>
