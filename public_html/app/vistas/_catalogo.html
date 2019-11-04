@@ -4,6 +4,11 @@
     <p>Lista ficticia de productos.</p>
     <hr>
 
+    <div class="alerta alerta-ok" role="alert">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      <button class="ocultar-alerta">&times;</button>
+    </div>
+
     <div class="flex-productos">
       <div class="producto-item">
         <div>

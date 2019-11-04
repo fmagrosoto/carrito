@@ -3,7 +3,10 @@
     <h1>Carrito de la compra</h1>
     <p>Lista de productos agregados.</p>
     <hr>
-
+    <div class="alerta alerta-ok" role="alert">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      <button class="ocultar-alerta">&times;</button>
+    </div>
     <table class="carrito">
       <thead>
         <tr>

@@ -61,6 +61,46 @@ hr {
   border-radius: 50%;
 }
 
+.alerta {
+  position: relative;
+  background: rgba(235,235,235,.5);
+  color: gray;
+  margin-bottom: 1rem;
+  padding: 1rem 3rem 1rem 1rem;
+  border: 1px lightgray solid;
+  border-radius: .5rem;
+}
+
+.alerta button.ocultar-alerta {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  border-radius: none;
+  border: 1px solid lightgray;
+  border-top-right-radius: .35rem;
+  cursor: pointer;
+  background: rgba(235,235,235,.25);
+  font-size: 12px;
+}
+
+.alerta button.ocultar-alerta:hover {
+  background: rgba(235,235,235,.85);
+}
+
+.alerta.alerta-ok {
+  background: rgba(150,220,150,.25);
+  border-color: rgb(194, 212, 194);
+  color: rgb(20,100,10);
+}
+
+.alerta.alerta-ok button.ocultar-alerta {
+  border-color: rgb(194, 212, 194);
+}
+
+.alerta.alerta-ok button.ocultar-alerta:hover {
+  background: rgba(150,220,150,.55);
+}
+
 /* HEADER */
 header {
   background: linear-gradient(rgb(235,240,235), rgb(200,205,200));
