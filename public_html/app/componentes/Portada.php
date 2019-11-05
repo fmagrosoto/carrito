@@ -44,19 +44,24 @@ class Portada {
   static function carrito() {
     $f3 = \Base::instance();
 
-    // Inicializamos $carrito como vacío y luego
-    // verificamos que hay una variable de sesión iniciada
-    // para asignar el valor de la variable de sesión a $carrito
-    $carrito = [];
+    // Verificamos que hay una variable de sesión iniciada
+    // para asignar el valor de la variable de sesión a $cesta
     if ($f3->get('SESSION.carrito')) {
-      $carrito = $f3->get('SESSION.carrito');
+      $cesta = $f3->get('SESSION.carrito');
+    } else {
+      $cesta = [];
     }
+
+    // Creamos un objeto con productos en la cesta
+    $dataCarrito = new Carrito($cesta);
+
+
 
     // VARIABLES PARA CADA PÁGINA INTERNA
     $f3->mset([
       'interna' => '/_carrito.html', // Página interna que se muestra en el templete
-      'prodCesta' => count($carrito), // Cantidad de items en la cesta
-      'cesta' => $carrito, // El contenido completo del carrito
+      'prodCesta' => $dataCarrito->productos, // Cantidad de items en la cesta
+      'dataCarrito' => $dataCarrito, // El contenido completo del carrito
       'msgAlerta' => self::proAlerta(), // Procesar mensajes de alerta
     ]);
 

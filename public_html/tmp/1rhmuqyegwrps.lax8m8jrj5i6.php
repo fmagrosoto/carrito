@@ -28,22 +28,22 @@
         </tr>
         <tr>
           <th colspan="3">Subtotal:</th>
-          <th>$ 00.00</th>
+          <th><?= ('$ ' . number_format($dataCarrito->subtotal,2)) ?></th>
           <th>&nbsp;</th>
         </tr>
         <tr>
           <th colspan="3">IVA:</th>
-          <th>$ 00.00</th>
+          <th><?= ('$ ' . number_format($dataCarrito->iva,2)) ?></th>
           <th>&nbsp;</th>
         </tr>
         <tr>
           <th colspan="3">Total:</th>
-          <th>$ 00.00</th>
+          <th><?= ('$ ' . number_format($dataCarrito->total,2)) ?></th>
           <th>&nbsp;</th>
         </tr>
       </tfoot>
       <tbody>
-        <?php foreach (($cesta?:[]) as $item): ?>
+        <?php foreach (($dataCarrito->cesta?:[]) as $item): ?>
           <tr>
             <td><?= ($item['producto']) ?></td>
             <td><?= ('$ ' . number_format($item['precio'],2)) ?></td>
