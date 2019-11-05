@@ -8,6 +8,12 @@ class Catalogo {
 
   // Simular base de datos
   static function simBD() {
+
+    return self::bd();
+  }
+
+  // BD
+  static function bd() {
     $datos = [
       [
         'id' => 'ju87hg53db',
@@ -75,7 +81,15 @@ class Catalogo {
         'precio' => 250.00,
       ]
     ];
+
     return $datos;
+  }
+
+  /**
+   * TOTALES
+   */
+  static function totales() {
+    return count(self::bd());
   }
 
 }

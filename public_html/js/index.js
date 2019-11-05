@@ -13,4 +13,20 @@
       }, false);
     });
   }
+
+  /**
+   * CONFIRM AL ELIMINAR PRODUCTO DEL CARRITO
+   */
+  var botElim = document.querySelectorAll('.eliminar');
+  if (botElim) {
+    [].forEach.call(botElim, function(item) {
+      item.addEventListener('click', function(e){
+        e.preventDefault();
+        var url = this.href;
+        if (confirm('¿Seguro quiere eliminar este producto?')) {
+          location.assign(url);
+        }
+      }, false);
+    });
+  }
 })();

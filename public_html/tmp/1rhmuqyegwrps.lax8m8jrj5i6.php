@@ -4,9 +4,9 @@
     <p>Lista de productos agregados.</p>
     <hr>
 
-    <?php if ($msgAlert): ?>
+    <?php if ($msgAlerta): ?>
       <div class="alerta alerta-ok" role="alert">
-        <?= ($msgAlert)."
+        <?= ($msgAlerta)."
 " ?>
         <button class="ocultar-alerta">&times;</button>
       </div>
@@ -43,48 +43,22 @@
         </tr>
       </tfoot>
       <tbody>
-        <tr>
-          <td>Producto</td>
-          <td>Precio</td>
-          <td>1</td>
-          <td>subtotal</td>
-          <td>
-            <form>
-              <input type="number" name="cantidad">
-              <input type="hidden" name="id">
-              <button type="submit">Actualizar</button>
-              <a href="" class="eliminar">&times;</a>
-            </form>
-          </td>
-        </tr>
-        <tr>
-          <td>Producto</td>
-          <td>Precio</td>
-          <td>2</td>
-          <td>subtotal</td>
-          <td>
-            <form>
-              <input type="number" name="cantidad">
-              <input type="hidden" name="id">
-              <button type="submit">Actualizar</button>
-              <a href="" class="eliminar">&times;</a>
-            </form>
-          </td>
-        </tr>
-        <tr>
-          <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum blanditiis reiciendis perferendis nobis!</td>
-          <td>Precio</td>
-          <td>3</td>
-          <td>subtotal</td>
-          <td>
-            <form>
-              <input type="number" name="cantidad">
-              <input type="hidden" name="id">
-              <button type="submit">Actualizar</button>
-              <a href="" class="eliminar">&times;</a>
-            </form>
-          </td>
-        </tr>
+        <?php foreach (($cesta?:[]) as $item): ?>
+          <tr>
+            <td><?= ($item['producto']) ?></td>
+            <td><?= ('$ ' . number_format($item['precio'],2)) ?></td>
+            <td><?= ($item['cantidad']) ?></td>
+            <td><?= ('$ ' . number_format($item['subtotal'],2)) ?></td>
+            <td>
+              <form action="/modificar" method="POST">
+                <input type="number" name="cantidad" min="1" max="9" value="<?= ($item['cantidad']) ?>">
+                <input type="hidden" name="id" value="<?= ($item['id']) ?>">
+                <button type="submit">Actualizar</button>
+                <a href="<?= ('/eliminar/' . $item['id']) ?>" class="eliminar">&times;</a>
+              </form>
+            </td>
+          </tr>
+        <?php endforeach; ?>
       </tbody>
     </table>
   </div>

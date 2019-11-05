@@ -48,6 +48,6 @@
     </div>
 
     <hr>
-    <p>Total de productos: <strong><?= (count($catalogo)) ?></strong></p>
+    <p>Total de productos: <strong><?= (Catalogo::totales()) ?></strong></p>
   </div>
 </main>

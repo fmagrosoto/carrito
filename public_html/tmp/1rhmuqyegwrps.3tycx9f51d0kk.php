@@ -18,7 +18,7 @@
       <a href="/">CarritoPHP</a>
       <ul>
         <li><a href="/">Productos</a></li>
-        <li><a href="/carrito">Ver Carrito <span class="cantidad">0</span></a></li>
+        <li><a href="/carrito">Ver Carrito <span class="cantidad"><?= ($prodCesta) ?></span></a></li>
         <li><a href="/contenido">Variables de sesión</a></li>
         <li><a target="_blank" href="https://github.com/fmagrosoto/carrito">Ver repositorio</a></li>
       </ul>
